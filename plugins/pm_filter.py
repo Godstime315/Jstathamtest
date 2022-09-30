@@ -158,7 +158,7 @@ async def advantage_spoll_choker(bot, query):
             await auto_filter(bot, query, k)
         else:
             k = await query.message.edit('Sorry Sweetheart, your request is not on my DataBase. First of all, Read the pinned message and follow the instructions and examples I gave there. if its still unavailable, then Use @mcrequestbot to request for it. please make sure you follow the request format there or my owner will skip your request. Thank youuu 🥰')
-            await asyncio.sleep(30)
+            await asyncio.sleep(25)
             await k.delete()
 
 
@@ -217,7 +217,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 except:
                     pass
             else:
-                await query.answer("That's not for you!!", show_alert=True)
+                await query.answer("Sweetie, That's not for you!!😅", show_alert=True)
     elif "groupcb" in query.data:
         await query.answer()
 
@@ -435,7 +435,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('Adult Bot🔞', url='https://t.me/Adultship')
             ],[
             InlineKeyboardButton('Help ⚙', callback_data='help'),
-            InlineKeyboardButton('🥰🅾︎🆆︎🅽︎🅴︎🆁︎', callback_data='owner')                                       
+            InlineKeyboardButton('♻️ ᴀʙᴏᴜᴛ ♻️', callback_data='about')                                       
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -463,14 +463,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "about":
         buttons = [[
-            InlineKeyboardButton('🅃🄴🄻🄴🄶🅁🄰🄼', url='https://t.me/Manlikerex'),
+            InlineKeyboardButton('🤖 Updates', url='https://t.me/Lordshipmovies'),
+            InlineKeyboardButton('♥️ Source', callback_data='source')
         ], [
             InlineKeyboardButton('🏠 Home', callback_data='start'),
             InlineKeyboardButton('🔐 Close', callback_data='close_data')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
-            text=script.OWNER_TXT,
+            text=script.ABOUT_TXT.format(temp.B_NAME),
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
@@ -589,7 +590,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
         if str(grp_id) != str(grpid):
             await query.message.edit("Your Active Connection Has Been Changed. Go To /settings.")
-            return await query.answer('Piracy Is Crime')
+            return await query.answer('Loading... please wait ⏳')
 
         if status == "True":
             await save_group_settings(grpid, set_type, False)
