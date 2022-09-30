@@ -646,9 +646,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == 'info':
         await query.answer("✴️ Information ✴️\n Use @mcrequestbot to request for movies or series that are not available here on my database\n\n❇️ Don't search for series here!! USE @Tess_Thompson for series\n\tⒸ Hislordship", True)        
     try: await query.answer('Loading... please wait ⏳')
+    except: pass
 
 
-    async def auto_filter(client, msg, spoll=False):
+async def auto_filter(client, msg, spoll=False):
     if not spoll:
         message = msg
         settings = await get_settings(message.chat.id)
