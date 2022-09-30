@@ -87,7 +87,7 @@ btn.insert(0,
             InlineKeyboardButton(f'🎬 {search} 🎬', 'reqst1')
         ]
     )
-    btn.insert(2,
+    btn.insert(0,
         [
             InlineKeyboardButton(f'🗃 Files: {len(files)}', 'dupe'),
             InlineKeyboardButton(f'🎁 Tips', 'tips'),
