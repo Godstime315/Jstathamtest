@@ -626,12 +626,14 @@ async def cb_handler(client: Client, query: CallbackQuery):
             ]
             reply_markup = InlineKeyboardMarkup(buttons)
             await query.message.edit_reply_markup(reply_markup)
+    elif query.data == 'dupe':
+        await query.answer("Comrade, these are the total number of files available for your search!! I know you like it 😅\n🔰 But for better results, narrow down your search using the following examples:\n\t\t\t\t\t\t- Movie Name year\n\t\t\t\t\t\t- Eg: Uncharted 2022\n\t\t\t\t\t\t- Eg: Blonde 2022 720p\n\tⒸ Hislordship", True) 
     elif query.data == 'tips':
-        await query.answer("🔰 Ask with correct spelling\n🔰 Don't ask movies those are not released in OTT Some Of Theatre Quality Available🤧\n🔰 For better results:\n\t\t\t\t\t\t- MovieName year\n\t\t\t\t\t\t- Eg: Kuruthi 2021\n\tⒸ Cinema hub", True)
+        await query.answer("🔰 Search with the correct spelling\n🔰 Don't include special characters in your search. ( , + - : ' \ > &) 👈 Don't include them\n🔰 Don't search for movies that are not yet available for downloading🤧\n\tⒸ Hislordship", True)
     elif query.data == 'reqst1':
-        await query.answer("Hey Bro 😍\n\n🎯 Click On The Button below The Files You Want And Start The Bot ⬇️", True)
+        await query.answer("Hey Dear 😍\n\n🎯 Click On The Quality that you want below, And Start The Bot for the first time.\n\n From the second time, I'll will deliver it to your PM myself.⬇️", True)
     elif query.data == 'info':
-        await query.answer("⚠︎ Information ⚠︎\n\nIf you do not see the requested movie / series file, look at the next page\n\nⒸ Cinema Hub", True)        
+        await query.answer("✴️ Information ✴️\n Use @mcrequestbot to request for movies or series that are not available here on my database\n\n❇️ Don't search for series here!! USE @Tess_Thompson for series\n\tⒸ Hislordship", True)        
     try: await query.answer('Loading... please wait ⏳')
 
 
