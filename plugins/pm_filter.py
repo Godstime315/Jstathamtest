@@ -73,7 +73,7 @@ async def next_page(bot, query):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"{file.file_name}.replace('@()][')", callback_data=f'files#{file.file_id}'
+                    text=f"{file.file_name}", callback_data=f'files#{file.file_id}'
                 ),
                 InlineKeyboardButton(
                     text=f"{get_size(file.file_size)}",
@@ -684,7 +684,7 @@ async def auto_filter(client, msg, spoll=False):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"{file.file_name}.replace('@', ' ')",
+                    text=f"{file.file_name}",
                     callback_data=f'{pre}#{file.file_id}',
                 ),
                 InlineKeyboardButton(
@@ -777,7 +777,7 @@ async def auto_filter(client, msg, spoll=False):
     else:
         await message.reply_text(cap, reply_markup=InlineKeyboardMarkup(btn))
     
-    await asyncio.sleep(900)
+    await asyncio.sleep(10)
     await fmsg.delete()
     
     if spoll:
@@ -884,7 +884,7 @@ async def manual_filters(client, message, text=False):
                             reply_to_message_id=reply_id
                         )
                      
-                    await asyncio.sleep(900)
+                    await asyncio.sleep(10)
                     await fmsg.delete()
                     
                 except Exception as e:
