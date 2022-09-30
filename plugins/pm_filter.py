@@ -119,13 +119,13 @@ async def next_page(bot, query):
     elif off_set is None:
         btn.append(
             [InlineKeyboardButton("ᴩᴀɢᴇ", callback_data=f"next_{req}_{key}_{off_set}"),
-             InlineKeyboardButton(f"🗓 {math.ceil(int(offset) / 5) + 1} / {math.ceil(total / 5)}", callback_data="pages"),
+             InlineKeyboardButton(f"🗓 {math.ceil(int(offset) / 10) + 1} / {math.ceil(total / 5)}", callback_data="pages"),
              InlineKeyboardButton("ɴᴇxᴛ ⏭️", callback_data=f"next_{req}_{key}_{n_offset}")])
     else:
         btn.append(
             [
                 InlineKeyboardButton("🔙 ᴩᴀɢᴇ", callback_data=f"next_{req}_{key}_{off_set}"),
-                InlineKeyboardButton(f"🗓 {math.ceil(int(offset) / 5) + 1} / {math.ceil(total / 10)}", callback_data="pages"),
+                InlineKeyboardButton(f"🗓 {math.ceil(int(offset) / 10) + 1} / {math.ceil(total / 10)}", callback_data="pages"),
                 InlineKeyboardButton("ɴᴇxᴛ ⏭️", callback_data=f"next_{req}_{key}_{n_offset}")
             ],
         )
@@ -777,7 +777,7 @@ async def auto_filter(client, msg, spoll=False):
     else:
         fmsg = await message.reply_text(cap, reply_markup=InlineKeyboardMarkup(btn))
     
-    await asyncio.sleep(10)
+    await asyncio.sleep(180)
     await fmsg.delete()
     
     if spoll:
@@ -884,7 +884,7 @@ async def manual_filters(client, message, text=False):
                             reply_to_message_id=reply_id
                         )
                      
-                    await asyncio.sleep(10)
+                    await asyncio.sleep(180)
                     await fmsg.delete()
                     
                 except Exception as e:
