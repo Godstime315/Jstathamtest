@@ -778,7 +778,6 @@ async def auto_filter(client, msg, spoll=False):
         await message.reply_text(cap, reply_markup=InlineKeyboardMarkup(btn))
     
     await asyncio.sleep(10)
-    await fmsg.delete()
     
     if spoll:
         await msg.message.delete()
@@ -858,10 +857,10 @@ async def manual_filters(client, message, text=False):
                 try:
                     if fileid == "None":
                         if btn == "[]":
-                            fmsg = await client.send_message(group_id, reply_text, disable_web_page_preview=True)
+                            await client.send_message(group_id, reply_text, disable_web_page_preview=True)
                         else:
                             button = eval(btn)
-                            fmsg = await client.send_message(
+                            await client.send_message(
                                 group_id,
                                 reply_text,
                                 disable_web_page_preview=True,
@@ -869,7 +868,7 @@ async def manual_filters(client, message, text=False):
                                 reply_to_message_id=reply_id
                             )
                     elif btn == "[]":
-                        fmsg = await client.send_cached_media(
+                        await client.send_cached_media(
                             group_id,
                             fileid,
                             caption=reply_text or "",
@@ -877,7 +876,7 @@ async def manual_filters(client, message, text=False):
                         )
                     else:
                         button = eval(btn)
-                        fmsg = await message.reply_cached_media(
+                        await message.reply_cached_media(
                             fileid,
                             caption=reply_text or "",
                             reply_markup=InlineKeyboardMarkup(button),
@@ -885,7 +884,6 @@ async def manual_filters(client, message, text=False):
                         )
                      
                     await asyncio.sleep(10)
-                    await fmsg.delete()
                     
                 except Exception as e:
                     logger.exception(e)
