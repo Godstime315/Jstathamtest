@@ -64,7 +64,7 @@ async def next_page(bot, query):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"[{get_size(file.file_size)}] {file.file_name}", callback_data=f'files#{file.file_id}'
+                    text=f"▪{get_size(file.file_size)}🍿{file.file_name}", callback_data=f'files#{file.file_id}'
                 ),
             ]
             for file in files
@@ -73,7 +73,7 @@ async def next_page(bot, query):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"{file.file_name}", callback_data=f'files#{file.file_id}'
+                    text=f"{file.file_name}.replace('@', ' ')", callback_data=f'files#{file.file_id}'
                 ),
                 InlineKeyboardButton(
                     text=f"{get_size(file.file_size)}",
@@ -683,7 +683,7 @@ async def auto_filter(client, msg, spoll=False):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"{file.file_name}",
+                    text=f"{file.file_name}.replace('@', ' ')",
                     callback_data=f'{pre}#{file.file_id}',
                 ),
                 InlineKeyboardButton(
@@ -715,15 +715,9 @@ async def auto_filter(client, msg, spoll=False):
              InlineKeyboardButton(text=f"🗓 1/{math.ceil(int(total_results) / 10)}", callback_data="pages"),
              InlineKeyboardButton(text="NEXT ⏭️", callback_data=f"next_{req}_{key}_{offset}")]
         )
-        btn.insert(2,
-            [InlineKeyboardButton(text="🔞 JOIN OUR ADULT CHANNEL HERE",url="https://t.me/+83dNsgyhMmI4OTNk")]
-        )
     else:
         btn.append(
             [InlineKeyboardButton(text="🗓 1/1", callback_data="pages")]
-        )
-        btn.insert(2,
-            [InlineKeyboardButton(text="🔞 JOIN OUR ADULT CHANNEL HERE",url="https://t.me/+83dNsgyhMmI4OTNk")]
         )
     imdb = await get_poster(search, file=(files[0]).file_name) if settings["imdb"] else None
     TEMPLATE = settings['template']
