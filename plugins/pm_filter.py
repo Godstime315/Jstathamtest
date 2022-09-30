@@ -714,10 +714,16 @@ async def cb_handler(client: Client, query: CallbackQuery):
             [InlineKeyboardButton(text=f"ᴩᴀɢᴇ", callback_data="pages"),
              InlineKeyboardButton(text=f"🗓 1/{math.ceil(int(total_results) / 10)}", callback_data="pages"),
              InlineKeyboardButton(text="NEXT ⏭️", callback_data=f"next_{req}_{key}_{offset}")]
-        )
+        )        
+        btn.insert(2,
+            [InlineKeyboardButton(text="🔞 JOIN OUR ADULT CHANNEL HERE",url="https://t.me/+83dNsgyhMmI4OTNk")]            
     else:
         btn.append(
             [InlineKeyboardButton(text="🗓 1/1", callback_data="pages")]
+        )
+        btn.insert(2,
+            [InlineKeyboardButton(text="🔞 JOIN OUR ADULT CHANNEL HERE",url="https://t.me/+83dNsgyhMmI4OTNk")]
+        
         )
     imdb = await get_poster(search, file=(files[0]).file_name) if settings["imdb"] else None
     TEMPLATE = settings['template']
