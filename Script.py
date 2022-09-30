@@ -11,7 +11,7 @@ class script(object):
 𝙷𝙴𝚁𝙴 𝙸𝚂 𝚃𝙷𝙴 𝙷𝙴𝙻𝙿 𝙵𝙾𝚁 𝙼𝚈 𝙲𝙾𝙼𝙼𝙰𝙽𝙳𝚂."""
     ABOUT_TXT = """<b>✯ CREATOR: Hislordship</b>
 <b>✯ MOVIE CHANNEL: <a href=https://t.me/+R59lJd9RGV1iNzZk>Hislordship Movies</a></b>
-<b>✯ SERIES CHANNEL: <a href=https://t.me/+YqsbYu4L9NExNDI0>LordshipTV</a></b>
+<b>✯ SERIES CHANNEL: <a href=https://t.me/+14mNx7OU_BxjMTE0>LordshipTV</a></b>
 <b>✯ CREDIT: Everyone in this journey</b>"""
     SOURCE_TXT = """<b>NOTE:</b>
 <b>THIS BOT WAS MADE USING SO MANY REPOS!! credit I give unto them in the mighty name of Jesus, Amen!
