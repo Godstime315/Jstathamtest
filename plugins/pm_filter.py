@@ -718,6 +718,7 @@ async def auto_filter(client, msg, spoll=False):
         )        
         btn.insert(2,
             [InlineKeyboardButton(text="🔞 JOIN OUR ADULT CHANNEL HERE",url="https://t.me/+83dNsgyhMmI4OTNk")]            
+        )
     else:
         btn.append(
             [InlineKeyboardButton(text="🗓 1/1", callback_data="pages")]
