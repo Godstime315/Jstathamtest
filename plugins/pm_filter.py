@@ -638,9 +638,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup = InlineKeyboardMarkup(buttons)
             await query.message.edit_reply_markup(reply_markup)
     elif query.data == 'dupe':
-        await query.answer("For better results, narrow down your search using the following examples:\n\t\t\t\t\t\t- Movie Name year\n\t\t\t\t\t\t- Eg: Uncharted 2022\n\t\t\t\t\t\t- Eg: Blonde 2022 720p\n\nⒸ Hislordship", True) 
+        await query.answer("⚡ For better results, narrow down your search using the following examples:\n\t\t\t\t\t\t- Movie Name year\n\t\t\t\t\t\t- Eg: Uncharted 2022\n\t\t\t\t\t\t- Eg: Blonde 2022 720p\n\nⒸ Hislordship", True) 
     elif query.data == 'tips':
-        await query.answer("🔰 Search with the correct spelling\n\n🔰 Don't include special characters like ( , + - : ' \ > &) in your search \n\nⒸ Hislordship", True)
+        await query.answer("📌 Search with the correct spelling\n\n📌 Don't include special characters like ( , + - : ' \ > &) in your search \n\nⒸ Hislordship", True)
     elif query.data == 'reqst1':
         await query.answer("Hey Dear 😍\n\n🎯 Click On The Quality that you want below, And Start The Bot for the first time.\n\nFrom the second time, I'll will deliver the files to your PM myself.⬇️", True)
     elif query.data == 'info':
